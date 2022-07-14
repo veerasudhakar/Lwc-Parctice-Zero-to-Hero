@@ -1,0 +1,60 @@
+<template>
+<lightning-card title="VeeraPage">
+    <div class="slds-m-top_medium slds-m-bottom_x-large">
+        <div class="slds-m-around_small">
+            <template if:true={isVisible}>
+                <div><lightning-input type="text" label="Enter FirstName" onkeyup={ChangeHandler}></lightning-input>
+                    <div>{FirstName} is the name {title}</div>
+                    <!--div>{Fullname}</div-->
+        
+                    <lightning-input type="text" label="Enter LastName" onkeyup={LastHandler}></lightning-input>
+                    <div>{LastName} is the name of {title1}</div>
+                    <lightning-input type="text" label="Enter Phone" onkeyup={PhoneHandler}></lightning-input>
+                    <div>{Phone} is the number of {title2}</div>
+                    <lightning-input type="email" label="Email address" onkeyup={Emailhandler}></lightning-input>
+                    <div>{Email} is the owner of {client}</div>
+                    
+        
+                        <lightning-input type="number"  label="Password" value={passWord} onchange={handleInput}></lightning-input>
+        
+                        <lightning-input type="checkbox" label="Basic option" checked={showBool}  ></lightning-input></div>
+            </template>
+        
+
+            </div>
+            <template if:false={isVisible}>
+                <div>You can't see the data. Please click the button</div>
+            </template>
+            <lightning-button 
+        variant="brand"
+        label="Show Data"
+        title="Show Data" 
+        onclick={handleClick}
+        class="slds-var-m-left_x-small"></lightning-button>
+        <!--lightning-button 
+        variant="brand"
+        label="Save Data"
+        title="Save Data" 
+        onclick={handleSaveClick}
+        class="slds-var-m-left_x-small"></lightning-button-->
+        <lightning-button variant="brand"
+         label="Brand" 
+        title="Primary action" 
+        onclick={handleClick} 
+        class="slds-m-left_x-small">
+    </lightning-button>
+    </div>
+</lightning-card>
+<template if:true={showResult}>
+    <lightning-card title="Vera Sudhakar Details">
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+            <div class="slds-m-around_small">
+                <div>{FirstName} is the name {title}</div>
+                <div>{LastName} is the name of {title1}</div>
+                <div>{Phone} is the number of {title2}</div>
+                <div>{Email} is the owner of {client}</div>
+                </div>
+                </div>
+                </lightning-card>
+</template>
+</template>

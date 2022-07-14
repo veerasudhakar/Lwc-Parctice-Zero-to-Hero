@@ -1,0 +1,35 @@
+<template>
+    <!--div>{Fullname}</div-->
+    <div class="slds-m-top_large">
+    <lightning-card  title="Hello">
+        <lightning-input type="text" label="Enter some text" onkeyup={ChangeHandler}></lightning-input>
+
+        <div>{Fullname} is the name {title}</div>
+   
+    </lightning-card>
+    
+</div>
+
+
+<div class="slds-m-top_large">
+    <lightning-card  title="Hello">
+        <lightning-input type="text" label="@Track Properties" onkeyup={trackHandler}></lightning-input>
+
+        <div>{address.city} is my city</div>
+   
+    </lightning-card>
+    
+</div>
+
+<div class="slds-m-top_large">
+    <lightning-card  title="Getter Demo">
+        
+        <div>First Username is {firstuser}</div>
+        <div>Second Username is {seconduser}</div>
+        <div>Multiplication of num1 and num2 is {multiply}</div>
+        <div>Addition of num1 and num2 is {addition}</div>
+    </lightning-card>
+    
+</div>
+    
+</template>

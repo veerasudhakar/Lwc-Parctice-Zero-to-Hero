@@ -1,0 +1,126 @@
+<template>
+    
+    <p>this is sudhakar</p>
+    
+    <h1>Lwc Zero to Hero</h1>
+    <h2>lwc</h2>
+    <a href="https://wissen.com">go to wissen</a>
+
+    <lightning-card title="Practice in Lwc">
+        <div class="slds-m-around_medium">
+           <div>{designation} is the {Name}</div> 
+
+            <input type="text" onkeyup={changeHandler}/>
+        </div>
+    </lightning-card>
+    <lightning-card title="Track Properties">
+     <div class="slds-m-top_large">
+        <input type="text" onkeyup={trackHandler}>
+        <div>{address.name} is my name</div>
+     </div>
+
+    </lightning-card>
+
+    <lightning-card title="Getter Example">
+        <div class="slds-m-around_large">
+            <div>First Username is the {firstuser}</div>
+            <div>First Username is the {seconduser}</div>
+            <div>First Username is the {thirduser}</div>
+            <div>Num1 and Num2 Multiply{multiply}</div>
+            <div>Num1 and Num2 Addition{add}</div>
+        </div>
+    </lightning-card>
+    <lightning-card title="Conditional Rendering">
+        <lightning-button variant="brand" label="ShowData"
+         title="ShowData" onclick={handleClick} 
+         class="slds-m-left_x-small">
+        </lightning-button>
+
+        <template if:true={isVisible}>
+
+            <div>Welcome to PrcaticeLWc</div>
+        </template>
+
+        <template if:false={isVisible}>
+            <div>U can't see the data without button click</div>
+        </template>
+
+    </lightning-card>
+
+    <lightning-card title="Template Looping">
+
+        <div class="slds-m-around_large">
+            <template for:each={movieList} for:item="movie">
+            <ul key={movie} class="slds-has-dividers_around-space">
+            <li class="slds-item">{movie}</li>
+        </ul>
+        </template>
+        </div>
+    </lightning-card>
+
+    <!--lightning-card title="TemplateLooping Iterator">
+
+        <div class="slds-var-m-around_medium">
+            <template iterator:cricket={cricketPlayers}>
+                <div key={cricket.value.id}>
+                    <ul class="slds-has-dividers_around-space">
+                        <template if:true={cricket.first}>
+                            <div class="slds-box-slds-theme_shade">
+
+                                <strong>
+                                    List of top captains and roles
+                                </strong>
+                            </div>
+                        </template>
+                        <li class="slds-item">
+                            <strong>{cricket.value.role}</strong>
+                            {cricket.value.captain}
+                        </li>
+                        <template if:true={cricket.last}>
+                            <div class="slds-box slds-theme_shade">
+                                <strong>Thanks for seeing the list of page</strong>
+                            </div>
+                        </template>
+
+
+                    </ul>
+                </div>
+            </template>
+        </div>
+    </lightning-card-->
+    <lightning-card title="iterator loop">
+        <div class="slds-var-m-around_medium">
+            <template iterator:ceo={ceoList}>
+                <div key={ceo.value.id}>
+                    <ul class="slds-has-dividers_around-space">
+                        <template if:true={ceo.first}>
+                            <div class="slds-box slds-theme_shade">
+                                <strong>
+                                    List of top companies and there COE's
+                                </strong>
+                            </div>
+                        </template>
+                        
+                        <li class="slds-item">
+                            <strong>{ceo.value.company} </strong>
+                            {ceo.value.name}
+                        </li>
+
+                        <template if:true={ceo.last}>
+                            <div class="slds-box slds-theme_shade">
+                                <strong>
+                                    Thanks for reading the list
+                                </strong>
+                            </div>
+                        </template>
+                    </ul>
+                </div>
+               
+            </template>
+        </div>
+    </lightning-card>
+
+   
+
+
+</template>
